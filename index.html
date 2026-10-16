@@ -9,13 +9,14 @@
   
   <style>
     :root {
-      --primary: #5c2d91;       /* بنفش شبیه به نمونه اسکرین شات */
+      --primary: #5c2d91;
       --primary-light: #f5f0fa;
       --text-main: #2b2b2b;
       --text-muted: #6e6e6e;
       --border-color: #ebebeb;
       --bg-page: #f9f9f9;
       --bg-card: #ffffff;
+      --price-red: #ef394e;
     }
 
     * {
@@ -31,12 +32,12 @@
       line-height: 1.8;
       display: flex;
       justify-content: center;
-      padding-bottom: 90px; /* فضا برای نوار چسبان پایین */
+      padding-bottom: 90px;
     }
 
     .wrapper {
       width: 100%;
-      max-width: 480px; /* بهینه‌سازی دقیق مطابق ابعاد نسخه موبایل تصویر */
+      max-width: 480px;
       background-color: var(--bg-card);
       min-height: 100vh;
       border-inline: 1px solid #eee;
@@ -88,30 +89,20 @@
     .main-image-frame {
       width: 100%;
       height: 320px;
-      border: 1px solid #333333; /* کادر مشکی عینا مطابق تصویر */
+      border: 1px solid #333333;
       border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       background: #fafafa;
+      overflow: hidden;
     }
 
-    /* فضای آماده برای درج تصویر توسط شما */
-    .image-placeholder {
+    .main-image-frame img {
       width: 100%;
       height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #aaa;
-      font-size: 13px;
-      gap: 6px;
-    }
-
-    .image-placeholder svg {
-      opacity: 0.4;
+      object-fit: contain;
     }
 
     .zoom-btn {
@@ -128,6 +119,7 @@
       justify-content: center;
       border: none;
       color: #666;
+      cursor: pointer;
     }
 
     /* تصاویر بندانگشتی (Thumbnail) */
@@ -142,13 +134,18 @@
       width: 75px;
       height: 75px;
       border: 1px solid #dedede;
-      border-radius: 4px;
+      border-radius: 6px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
-      color: #aaa;
       background: #fff;
+    }
+
+    .thumb-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* مشخصات و عنوان */
@@ -160,13 +157,69 @@
       font-size: 18px;
       font-weight: 800;
       color: #222;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .product-subtitle {
       font-size: 13px;
       color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* بخش باکس قیمت (عمده و تکی) */
+    .pricing-card {
+      background: #fbfbfb;
+      border: 1px dashed #d6d6d6;
+      border-radius: 12px;
+      padding: 14px 16px;
       margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+    }
+
+    .price-row:not(:last-child) {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .price-label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-tag {
+      font-size: 11px;
+      background: #eef2ff;
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .price-value {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--price-red);
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .price-unit {
+      font-size: 12px;
+      font-weight: normal;
+      color: #777;
     }
 
     /* لیست مشخصات فنی */
@@ -224,10 +277,6 @@
       color: #2c2c2c;
     }
 
-    .store-title-bar svg {
-      color: #444;
-    }
-
     .store-guarantee-bar {
       display: flex;
       align-items: center;
@@ -244,11 +293,7 @@
       gap: 8px;
     }
 
-    .guarantee-icon {
-      color: #666;
-    }
-
-    /* دکمه پشتیبانی شناور (دایره قرمز در اسکرین‌شات) */
+    /* دکمه شناور پشتیبانی تلفنی (سمت چپ) */
     .support-btn-fixed {
       position: fixed;
       bottom: 25px;
@@ -264,6 +309,51 @@
       box-shadow: 0 4px 14px rgba(255, 51, 75, 0.4);
       z-index: 99;
       cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .support-btn-fixed:hover {
+      transform: scale(1.08);
+    }
+
+    /* دسته دکمه‌های شناور خرید از مارکت‌پلیس‌ها (سمت راست) */
+    .market-floating-group {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 99;
+    }
+
+    .market-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+      border: 1px solid #ebebeb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      padding: 6px;
+    }
+
+    .market-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .market-btn:hover {
+      transform: translateY(-3px) scale(1.08);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -280,26 +370,23 @@
     </div>
   </div>
 
-  <!-- کادر عکس محصول اصلی (جای خالی جهت افزودن تصویر) -->
+  <!-- کادر عکس محصول اصلی -->
   <div class="product-gallery">
     <div class="main-image-frame">
       <button class="zoom-btn" title="بزرگنمایی">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg>
       </button>
 
-      <!-- محل قرارگیری تگ <img> شما -->
-      <img src="IMG-20261015-WA0004.jpg" alt="کاغذ پشت چسب‌دار JOJO" style="width: 100%; height: 100%; object-fit: contain;">
+      <img src="IMG-20261015-WA0004.jpg" alt="کاغذ پشت چسب‌دار JOJO">
     </div>
 
     <!-- تصاویر کوچک بندانگشتی -->
     <div class="thumbs-row">
       <div class="thumb-slot">
-        <!-- محل درج عکس کوچک -->
-        <span>بندانگشتی ۱</span>
+        <img src="IMG-20261015-WA0005.jpg" alt="تصویر فرعی ۱">
       </div>
       <div class="thumb-slot">
-        <!-- محل درج عکس کوچک -->
-        <span>بندانگشتی ۲</span>
+        <img src="IMG-20261015-WA0000.jpg" alt="تصویر فرعی ۲">
       </div>
     </div>
   </div>
@@ -309,6 +396,30 @@
     <h1 class="product-title">کاغذ فتوعکاسی ۱۳۵ گرم پشت چسب‌دار JOJO</h1>
     <div class="product-subtitle">کاغذ فتوعکاسی ۱۳۵ گرم پشت چسب‌دار JOJO</div>
 
+    <!-- بخش قیمت عمده و تکی -->
+    <div class="pricing-card">
+      <div class="price-row">
+        <span class="price-label">
+          <span class="badge-tag">کارتنی</span>
+          خرید عمده:
+        </span>
+        <span class="price-value">
+          ۲,۴۵۰
+          <span class="price-unit">تومان</span>
+        </span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">
+          خرید تکی:
+        </span>
+        <span class="price-value">
+          ۲,۵۵۰
+          <span class="price-unit">تومان</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- لیست مشخصات فنی -->
     <div class="specs-list">
       <div class="spec-item">
         <span class="spec-title">نوع کاغذ :</span>
@@ -339,16 +450,35 @@
     </div>
     <div class="store-guarantee-bar">
       <div class="guarantee-left">
-        <svg class="guarantee-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
         <span>گارانتی اصالت و سلامت فیزیکی کالا</span>
       </div>
     </div>
   </div>
 
-  <!-- دکمه شناور پشتیبانی هدست -->
-  <div class="support-btn-fixed" title="تماس با پشتیبانی">
+  <!-- دکمه شناور پشتیبانی تلفنی (سمت چپ) -->
+  <a href="tel:09146778784" class="support-btn-fixed" title="تماس با پشتیبانی">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+  </a>
+
+  <!-- ۳ دکمه شناور مارکت‌پلیس‌ها (سمت راست) -->
+  <div class="market-floating-group">
+    <!-- دکمه ترب -->
+    <a href="https://torob.com/p/لینک-محصول-در-ترب" target="_blank" class="market-btn" title="مشاهده و خرید از ترب">
+      <img src="torob.png" alt="ترب">
+    </a>
+
+    <!-- دکمه باسلام -->
+    <a href="https://basalam.com/p/لینک-محصول-در-باسلام" target="_blank" class="market-btn" title="مشاهده و خرید از باسلام">
+      <img src="basalam.png" alt="باسلام">
+    </a>
+
+    <!-- دکمه ایمالز -->
+    <a href="https://emalls.ir/p/لینک-محصول-در-ایمالز" target="_blank" class="market-btn" title="مشاهده و خرید از ایمالز">
+      <img src="imalz.png" alt="ایمالز">
+    </a>
   </div>
+
 </div>
 
 </body>
