@@ -1,697 +1,354 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#11120f">
-<title>JOJO | تولید و پخش عمده کاغذ پشت چسب‌دار</title>
-<meta name="description" content="خرید عمده کاغذ پشت چسب‌دار JOJO با قیمت بسته‌ای و کارتنی، مستقیم از تولیدکننده.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کاغذ فتوعکاسی و پشت چسب‌دار JOJO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #5c2d91;       /* بنفش شبیه به نمونه اسکرین شات */
+      --primary-light: #f5f0fa;
+      --text-main: #2b2b2b;
+      --text-muted: #6e6e6e;
+      --border-color: #ebebeb;
+      --bg-page: #f9f9f9;
+      --bg-card: #ffffff;
+    }
 
-<style>
-:root {
-  --bg: #11120f;
-  --panel: #191a16;
-  --white: #f6f5ef;
-  --muted: #a6a69c;
-  --yellow: #e9ff57;
-  --line: rgba(255,255,255,.12);
-  --red: #ff4b37;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--white);
-  font-family: 'Vazirmatn', Tahoma, sans-serif;
-  line-height: 1.8;
-}
-a { color: inherit; text-decoration: none; }
-button, a { -webkit-tap-highlight-color: transparent; }
-.container { width: min(1160px, 91%); margin: auto; }
-.topline {
-  background: var(--yellow);
-  color: #171811;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 800;
-  padding: 7px 12px;
-}
-header {
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(17,18,15,.94);
-  backdrop-filter: blur(15px);
-}
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 78px;
-  gap: 20px;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  direction: ltr;
-}
-.logo-mark {
-  background: var(--yellow);
-  color: #171811;
-  width: 43px;
-  height: 43px;
-  display: grid;
-  place-items: center;
-  font-size: 23px;
-  font-weight: 900;
-  border-radius: 12px 3px 12px 3px;
-}
-.logo strong { font-size: 25px; letter-spacing: 2px; }
-.logo small {
-  display: block;
-  color: var(--muted);
-  font-size: 9px;
-  letter-spacing: 2px;
-  line-height: 1.3;
-}
-.nav-links { display: flex; gap: 26px; font-size: 13px; color: #c9c9c1; }
-.nav-links a:hover { color: var(--yellow); }
-.btn {
-  border: 0;
-  border-radius: 7px;
-  padding: 12px 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: .2s;
-}
-.btn:hover { transform: translateY(-2px); }
-.btn-primary { background: var(--yellow); color: #161710; }
-.btn-outline { border: 1px solid var(--line); color: white; }
-.btn-dark { background: #171811; color: var(--yellow); }
-.hero { padding: 70px 0 75px; overflow: hidden; }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 55px;
-}
-.eyebrow {
-  color: var(--yellow);
-  font-size: 12px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-.dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background: var(--yellow);
-  border-radius: 50%;
-  box-shadow: 0 0 12px var(--yellow);
-}
-h1 {
-  font-size: clamp(36px, 5.3vw, 67px);
-  line-height: 1.35;
-  letter-spacing: -2px;
-  margin: 19px 0;
-  font-weight: 900;
-}
-h1 span { color: var(--yellow); }
-.hero-desc { color: #b9bab0; max-width: 460px; font-size: 15px; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 27px; }
-.hero-points {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-  margin-top: 34px;
-  font-size: 11px;
-  color: #c6c7bd;
-}
-.hero-points span { display: flex; align-items: center; gap: 7px; }
-.check { color: var(--yellow); font-size: 17px; }
-.visual {
-  min-height: 475px;
-  border-radius: 18px;
-  background:
-    radial-gradient(ellipse at 50% 45%, rgba(233,255,87,.16), transparent 53%),
-    linear-gradient(140deg, #25271e, #151612 70%);
-  border: 1px solid var(--line);
-  position: relative;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-.visual:before, .visual:after {
-  content: "";
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  border: 1px solid rgba(233,255,87,.13);
-  border-radius: 50%;
-}
-.visual:after { width: 285px; height: 285px; }
-.visual-grid {
-  position: absolute;
-  inset: 0;
-  opacity: .14;
-  background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
-  background-size: 35px 35px;
-  mask-image: linear-gradient(transparent, black, transparent);
-}
-.product-stage {
-  width: 265px;
-  height: 335px;
-  position: relative;
-  z-index: 2;
-  transform: rotate(-5deg);
-  filter: drop-shadow(24px 35px 20px rgba(0,0,0,.38));
-}
-.paper-pack {
-  position: absolute;
-  inset: 0 13px 0 0;
-  background: linear-gradient(120deg,#fff 0%,#e8e8e3 62%,#c5c7bf 100%);
-  border-radius: 5px 12px 8px 5px;
-  border: 1px solid #fff;
-  overflow: hidden;
-  color: #181912;
-}
-.paper-pack:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(0deg,transparent 0 21px,rgba(0,0,0,.045) 22px 23px);
-}
-.pack-side {
-  position: absolute;
-  top: 9px;
-  bottom: -1px;
-  right: -13px;
-  width: 14px;
-  background: linear-gradient(90deg,#b3b4ac,#eeeeea);
-  transform: skewY(-8deg);
-}
-.pack-top {
-  height: 22px;
-  background: #dedfd8;
-  border-bottom: 1px solid #c4c5be;
-}
-.pack-brand {
-  margin: 26px 19px 0;
-  background: var(--yellow);
-  font-weight: 900;
-  font-size: 31px;
-  padding: 0 9px;
-  display: inline-block;
-  direction: ltr;
-  letter-spacing: -1px;
-}
-.pack-text {
-  margin: 13px 19px;
-  font-size: 12px;
-  font-weight: 900;
-  line-height: 1.7;
-}
-.pack-line {
-  height: 4px;
-  width: 62%;
-  margin: 12px 19px;
-  background: #171811;
-}
-.pack-sheet {
-  position: absolute;
-  width: 130px;
-  height: 150px;
-  bottom: 12px;
-  left: 18px;
-  border: 1px solid #c5c6be;
-  background: linear-gradient(135deg,#fff,#e7e8e2);
-  transform: skewY(-13deg);
-  box-shadow: 5px 7px 0 #d2d3cc;
-}
-.pack-sheet:after {
-  content: "SELF ADHESIVE";
-  position: absolute;
-  bottom: 10px;
-  left: 6px;
-  right: 6px;
-  font-size: 8px;
-  font-weight: 900;
-  direction: ltr;
-  text-align: center;
-}
-.visual-tag {
-  position: absolute;
-  z-index: 3;
-  padding: 10px 15px;
-  background: #24251e;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 11px;
-}
-.visual-tag strong { color: var(--yellow); display: block; font-size: 14px; }
-.tag-top { top: 27px; right: 24px; }
-.tag-bottom { bottom: 28px; left: 22px; }
-.visual-index {
-  position: absolute;
-  top: 20px;
-  left: 22px;
-  font-size: 10px;
-  color: #73756a;
-  direction: ltr;
-  letter-spacing: 3px;
-}
-.price-strip {
-  background: var(--yellow);
-  color: #191a13;
-  padding: 22px 0;
-}
-.price-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  gap: 25px;
-}
-.price-intro strong { font-size: 19px; display: block; }
-.price-intro small { font-size: 11px; }
-.price-item {
-  padding-right: 24px;
-  border-right: 1px solid rgba(0,0,0,.2);
-}
-.price-item small { font-size: 12px; font-weight: 700; }
-.price-item strong { display: block; font-size: 35px; line-height: 1.5; letter-spacing: -1px; }
-.price-item span { font-size: 11px; }
-.section { padding: 90px 0; }
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 20px;
-  margin-bottom: 35px;
-}
-.section-label { color: var(--yellow); font-size: 11px; font-weight: 800; }
-h2 { font-size: clamp(26px,4vw,42px); line-height: 1.5; margin: 8px 0; }
-.section-head p { color: var(--muted); font-size: 13px; max-width: 330px; margin-bottom: 8px; }
-.price-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.price-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  padding: 30px;
-  border-radius: 14px;
-  position: relative;
-  overflow: hidden;
-}
-.price-card.featured { border-color: var(--yellow); }
-.card-label { font-size: 12px; color: var(--muted); }
-.card-title { font-size: 25px; font-weight: 800; margin: 9px 0; }
-.card-price { font-size: 43px; font-weight: 900; letter-spacing: -1px; }
-.card-price small { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
-.card-rule { border-top: 1px solid var(--line); margin: 22px 0; }
-.card-benefits { list-style: none; padding: 0; margin: 0 0 25px; color: #c7c8bf; font-size: 13px; }
-.card-benefits li { margin: 9px 0; }
-.card-benefits li:before { content: "✓"; color: var(--yellow); margin-left: 10px; font-weight: 900; }
-.featured .card-benefits li:before { color: var(--yellow); }
-.badge {
-  display: inline-block;
-  background: var(--yellow);
-  color: #151610;
-  font-size: 10px;
-  font-weight: 900;
-  padding: 5px 10px;
-  border-radius: 4px;
-  margin-bottom: 12px;
-}
-.feature-band {
-  background: #1b1c16;
-  border-block: 1px solid var(--line);
-  padding: 37px 0;
-}
-.features {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 20px;
-}
-.feature { padding: 7px 12px; border-right: 1px solid var(--line); }
-.feature-icon {
-  width: 43px;
-  height: 43px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(233,255,87,.35);
-  border-radius: 10px;
-  color: var(--yellow);
-  font-size: 21px;
-  margin-bottom: 14px;
-}
-.feature strong { font-size: 14px; display: block; }
-.feature p { font-size: 11px; color: var(--muted); margin-bottom: 0; }
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-}
-.step {
-  padding: 25px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #151611;
-}
-.step-num { color: var(--yellow); font-size: 12px; direction: ltr; }
-.step h3 { font-size: 17px; margin: 12px 0 5px; }
-.step p { font-size: 12px; color: var(--muted); margin: 0; }
-.cta {
-  padding: 65px 35px;
-  background: var(--yellow);
-  color: #161710;
-  border-radius: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-  position: relative;
-  overflow: hidden;
-}
-.cta h2 { font-size: clamp(27px,4vw,43px); margin: 0 0 8px; }
-.cta p { font-size: 13px; margin: 0; }
-.cta .btn { background: #171811; color: white; white-space: nowrap; }
-.cta-decor {
-  position: absolute;
-  left: 23%;
-  top: -100px;
-  width: 300px;
-  height: 300px;
-  border: 1px solid rgba(0,0,0,.09);
-  border-radius: 50%;
-  pointer-events: none;
-}
-footer { padding: 35px 0 90px; }
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 25px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.footer-note { font-size: 11px; color: var(--muted); }
-.footer-links { display: flex; gap: 18px; font-size: 11px; color: #c5c6bd; }
-.mobile-order {
-  display: none;
-  position: fixed;
-  z-index: 60;
-  bottom: 12px;
-  right: 4%;
-  width: 92%;
-  box-shadow: 0 8px 30px #0008;
-}
-.mobile-order .btn { width: 100%; min-height: 49px; }
-@media(max-width:800px) {
-  .nav { min-height: 67px; }
-  .nav-links { display: none; }
-  .nav>.btn { padding: 10px 12px; font-size: 11px; }
-  .hero { padding: 42px 0 48px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-  h1 { letter-spacing: -1px; }
-  .hero-desc { font-size: 13px; }
-  .visual { min-height: 410px; }
-  .product-stage { transform: scale(.88) rotate(-5deg); }
-  .price-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .price-intro { grid-column: 1/-1; }
-  .price-item { padding-right: 12px; }
-  .price-item strong { font-size: 28px; }
-  .price-item small { font-size: 10px; }
-  .section { padding: 60px 0; }
-  .section-head { display: block; }
-  .section-head p { max-width: none; }
-  .price-cards { grid-template-columns: 1fr; }
-  .features { grid-template-columns: 1fr 1fr; gap: 26px 12px; }
-  .feature { padding-right: 10px; }
-  .steps { grid-template-columns: 1fr; }
-  .cta { padding: 34px 24px; display: block; }
-  .cta .btn { margin-top: 22px; }
-  .mobile-order { display: block; }
-  footer { padding-bottom: 90px; }
-}
-@media(max-width:380px) {
-  .logo strong { font-size: 21px; }
-  .hero-actions .btn { width: 100%; }
-  .price-item strong { font-size: 24px; }
-  .features { grid-template-columns: 1fr 1fr; }
-}
-.product-stage.real-product {
-  width: 100%;
-  height: 400px;
-  position: relative;
-  transform: none;
-  filter: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.product-stage.real-product img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  position: relative;
-  z-index: 2;
-}
-</style>
+    body {
+      font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, Tahoma, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 90px; /* فضا برای نوار چسبان پایین */
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 480px; /* بهینه‌سازی دقیق مطابق ابعاد نسخه موبایل تصویر */
+      background-color: var(--bg-card);
+      min-height: 100vh;
+      border-inline: 1px solid #eee;
+    }
+
+    /* نوار جستجوی بالا */
+    .top-search-bar {
+      padding: 12px 16px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .search-input-box {
+      display: flex;
+      align-items: center;
+      background-color: #f5f5f7;
+      border-radius: 25px;
+      padding: 8px 14px;
+      gap: 10px;
+    }
+
+    .search-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .search-placeholder {
+      font-size: 13px;
+      color: #8c8c8c;
+    }
+
+    /* بخش تصویر محصول */
+    .product-gallery {
+      padding: 16px;
+      position: relative;
+    }
+
+    .main-image-frame {
+      width: 100%;
+      height: 320px;
+      border: 1px solid #333333; /* کادر مشکی عینا مطابق تصویر */
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #fafafa;
+    }
+
+    /* فضای آماده برای درج تصویر توسط شما */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 13px;
+      gap: 6px;
+    }
+
+    .image-placeholder svg {
+      opacity: 0.4;
+    }
+
+    .zoom-btn {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      color: #666;
+    }
+
+    /* تصاویر بندانگشتی (Thumbnail) */
+    .thumbs-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+      justify-content: flex-end;
+    }
+
+    .thumb-slot {
+      width: 75px;
+      height: 75px;
+      border: 1px solid #dedede;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #aaa;
+      background: #fff;
+    }
+
+    /* مشخصات و عنوان */
+    .product-details {
+      padding: 10px 18px 20px;
+    }
+
+    .product-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #222;
+      margin-bottom: 12px;
+    }
+
+    .product-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    /* لیست مشخصات فنی */
+    .specs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .spec-item {
+      display: flex;
+      font-size: 13.5px;
+      color: #4a4a4a;
+    }
+
+    .spec-title {
+      color: #7d7d7d;
+      margin-left: 6px;
+    }
+
+    .spec-val {
+      font-weight: 600;
+      color: #2b2b2b;
+    }
+
+    /* متن توضیحات بدنه */
+    .content-box {
+      font-size: 13px;
+      color: #555;
+      line-height: 2;
+      border-top: 1px solid var(--border-color);
+      padding-top: 18px;
+      margin-top: 10px;
+    }
+
+    /* کارت فروشنده / فروشگاه */
+    .store-badge-card {
+      margin: 20px 18px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .store-title-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: #fdfdfd;
+      border-bottom: 1px solid var(--border-color);
+      font-weight: 700;
+      font-size: 14.5px;
+      color: #2c2c2c;
+    }
+
+    .store-title-bar svg {
+      color: #444;
+    }
+
+    .store-guarantee-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #3b3b3b;
+      font-weight: 600;
+    }
+
+    .guarantee-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guarantee-icon {
+      color: #666;
+    }
+
+    /* دکمه پشتیبانی شناور (دایره قرمز در اسکرین‌شات) */
+    .support-btn-fixed {
+      position: fixed;
+      bottom: 25px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #ff334b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(255, 51, 75, 0.4);
+      z-index: 99;
+      cursor: pointer;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="topline">
-  JOJO — تولید و پخش کاغذ پشت‌چسب‌دار | سفارش بسته‌ای و کارتنی
-</div>
-
-<header>
-  <div class="container nav">
-    <a class="logo" href="#home" aria-label="JOJO صفحه اصلی">
-      <span class="logo-mark">J</span>
-      <span>
-        <strong>JOJO</strong>
-        <small>SELF ADHESIVE PAPER</small>
-      </span>
-    </a>
-    <nav class="nav-links">
-      <a href="#product">محصول</a>
-      <a href="#prices">قیمت همکاری</a>
-      <a href="#advantages">مزایای خرید</a>
-      <a href="#contact">ثبت سفارش</a>
-    </nav>
-    <a class="btn btn-primary" href="#prices">مشاهده قیمت‌ها ↙</a>
-  </div>
-</header>
-
-<main>
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow"><span class="dot"></span> مستقیم از تولیدکننده</div>
-      <h1>
-        کاغذ پشت‌چسب‌دار<br>
-        برای کسب‌وکارهای <span>حرفه‌ای.</span>
-      </h1>
-      <p class="hero-desc">
-        محصول JOJO، برای سفارش‌های بسته‌ای و کارتنی.
-        قیمت همکاری را ببینید و برای استعلام موجودی و ثبت سفارش با واحد فروش تماس بگیرید.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#prices">مشاهده قیمت عمده <span>↙</span></a>
-        <a class="btn btn-outline" href="#contact">درخواست سفارش ←</a>
-      </div>
-      <div class="hero-points">
-        <span><b class="check">✓</b> خرید بسته‌ای</span>
-        <span><b class="check">✓</b> خرید کارتنی</span>
-        <span><b class="check">✓</b> تولیدکننده JOJO</span>
-      </div>
-    </div>
-
-    <div class="visual" id="product">
-      <div class="visual-grid"></div>
-      <div class="visual-index">JOJO / PRODUCT 001</div>
-      <div class="visual-tag tag-top">
-        محصول برند
-        <strong>JOJO ORIGINAL</strong>
-      </div>
-   <div class="product-stage real-product">
-  <img
-    src="IMG-20261015-WA0004.jpg"
-    alt="کاغذ پشت چسب‌دار JOJO"
-  >
-</div>
-  </div>
-</section>
-
-<section class="price-strip" aria-label="خلاصه قیمت‌ها">
-  <div class="container price-grid">
-    <div class="price-intro">
-      <strong>قیمت همکاری JOJO</strong>
-      <small>انتخاب مدل خرید متناسب با سفارش شما</small>
-    </div>
-    <div class="price-item">
-      <small>خرید بسته‌ای</small>
-      <strong>۲٬۵۵۰</strong>
-      <span>قیمت هر واحد فروش بسته‌ای</span>
-    </div>
-    <div class="price-item">
-      <small>خرید کارتنی</small>
-      <strong>۲٬۴۵۰</strong>
-      <span>قیمت هر واحد فروش کارتنی</span>
+<div class="wrapper">
+  <!-- نوار جستجو -->
+  <div class="top-search-bar">
+    <div class="search-input-box">
+      <button class="search-btn" aria-label="جستجو">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      </button>
+      <span class="search-placeholder">جستجوی محصولات</span>
     </div>
   </div>
-</section>
 
-<section class="section" id="prices">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-label">WHOLESALE PRICING / 01</div>
-        <h2>خرید راحت؛ قیمت شفاف.</h2>
+  <!-- کادر عکس محصول اصلی (جای خالی جهت افزودن تصویر) -->
+  <div class="product-gallery">
+    <div class="main-image-frame">
+      <button class="zoom-btn" title="بزرگنمایی">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg>
+      </button>
+
+      <!-- محل قرارگیری تگ <img> شما -->
+      <img src="IMG-20261015-WA0004.jpg" alt="کاغذ پشت چسب‌دار JOJO" style="width: 100%; height: 100%; object-fit: contain;">
+    </div>
+
+    <!-- تصاویر کوچک بندانگشتی -->
+    <div class="thumbs-row">
+      <div class="thumb-slot">
+        <!-- محل درج عکس کوچک -->
+        <span>بندانگشتی ۱</span>
       </div>
-      <p>
-        متناسب با حجم خریدتان انتخاب کنید.
-        برای تعداد دقیق هر کارتن، حداقل سفارش و هزینه ارسال از واحد فروش استعلام بگیرید.
-      </p>
-    </div>
-
-    <div class="price-cards">
-      <article class="price-card">
-        <div class="card-label">برای سفارش‌های محدودتر</div>
-        <div class="card-title">خرید بسته‌ای</div>
-        <div class="card-price">۲٬۵۵۰ <small>قیمت اعلامی</small></div>
-        <div class="card-rule"></div>
-        <ul class="card-benefits">
-          <li>مناسب خرید در تعداد بسته</li>
-          <li>امکان استعلام موجودی</li>
-          <li>هماهنگی مستقیم با واحد فروش</li>
-        </ul>
-        <a class="btn btn-outline" href="#contact">استعلام خرید بسته‌ای ←</a>
-      </article>
-
-      <article class="price-card featured">
-        <span class="badge">قیمت پایین‌تر</span>
-        <div class="card-label">برای پخش‌کنندگان و خرید عمده</div>
-        <div class="card-title">خرید کارتنی</div>
-        <div class="card-price">۲٬۴۵۰ <small>قیمت اعلامی</small></div>
-        <div class="card-rule"></div>
-        <ul class="card-benefits">
-          <li>قیمت اعلامی کمتر نسبت به خرید بسته‌ای</li>
-          <li>مناسب سفارش‌های کارتنی</li>
-          <li>هماهنگی تعداد و ارسال پیش از خرید</li>
-        </ul>
-        <a class="btn btn-primary" href="tel:09146778784">استعلام خرید کارتنی ←</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="feature-band" id="advantages">
-  <div class="container features">
-    <div class="feature">
-      <div class="feature-icon">✳</div>
-      <strong>برند JOJO</strong>
-      <p>معرفی محصول با هویت مشخص تولیدکننده.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">▤</div>
-      <strong>دو روش خرید</strong>
-      <p>انتخاب سفارش بسته‌ای یا کارتنی.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">↗</div>
-      <strong>قیمت‌گذاری شفاف</strong>
-      <p>مشاهده قیمت اعلامی پیش از ثبت سفارش.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">◎</div>
-      <strong>ثبت درخواست آسان</strong>
-      <p>ارتباط مستقیم با فروش برای هماهنگی خرید.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-label">HOW TO ORDER / 02</div>
-        <h2>سفارش شما، در سه مرحله.</h2>
-      </div>
-      <p>قبل از پرداخت، جزئیات سفارش را با واحد فروش هماهنگ کنید.</p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">STEP 01 / 03</div>
-        <h3>نوع خرید را انتخاب کنید</h3>
-        <p>خرید بسته‌ای یا کارتنی را متناسب با نیاز خود مشخص کنید.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">STEP 02 / 03</div>
-        <h3>جزئیات را هماهنگ کنید</h3>
-        <p>تعداد، موجودی، مبلغ نهایی و هزینه ارسال را استعلام بگیرید.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">STEP 03 / 03</div>
-        <h3>سفارش را نهایی کنید</h3>
-        <p>پس از تأیید شرایط، سفارش خود را با واحد فروش نهایی کنید.</p>
+      <div class="thumb-slot">
+        <!-- محل درج عکس کوچک -->
+        <span>بندانگشتی ۲</span>
       </div>
     </div>
   </div>
-</section>
 
-<section class="container" id="contact">
-  <div class="cta">
-    <div class="cta-decor"></div>
-    <div>
-      <div class="section-label" style="color:#414526">JOJO / SALES DEPARTMENT</div>
-      <h2>برای سفارش عمده آماده‌اید؟</h2>
-      <p>برای دریافت موجودی، تعداد هر کارتن و شرایط ارسال با ما در ارتباط باشید.</p>
-    </div>
-    <a class="btn" href="tel:09146778784">تماس با واحد فروش ↗</a>
-  </div>
-</section>
-</main>
+  <!-- مشخصات متنی کالا -->
+  <div class="product-details">
+    <h1 class="product-title">کاغذ فتوعکاسی ۱۳۵ گرم پشت چسب‌دار JOJO</h1>
+    <div class="product-subtitle">کاغذ فتوعکاسی ۱۳۵ گرم پشت چسب‌دار JOJO</div>
 
-<footer>
-  <div class="container footer-row">
-    <a class="logo" href="#home">
-      <span class="logo-mark">J</span>
-      <span><strong>JOJO</strong><small>SELF ADHESIVE PAPER</small></span>
-    </a>
-    <div class="footer-note">
-      تولید و پخش کاغذ پشت‌چسب‌دار JOJO
-      <br>قیمت‌ها و شرایط فروش را پیش از ثبت سفارش استعلام کنید.
+    <div class="specs-list">
+      <div class="spec-item">
+        <span class="spec-title">نوع کاغذ :</span>
+        <span class="spec-val">گلاسه براق پشت چسب‌دار</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-title">تعداد برگ در بسته :</span>
+        <span class="spec-val">۵۰ برگ A4</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-title">نوع چاپ :</span>
+        <span class="spec-val">جوهرافشان</span>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#product">محصول</a>
-      <a href="#prices">قیمت‌ها</a>
-      <a href="tel:09146778784">تماس با ما</a>
+
+    <div class="content-box">
+      در ادامه همراه ما باشید با مشخصات کامل کاغذ فتوعکاسی ۱۳۵ گرم پشت چسبدار JOJO
+      <br><br>
+      فروشگاه تخصصی انواع کاغذهای گلاسه و جوهرافشان پشت چسب‌دار با کیفیت بالا و ماندگاری تضمین‌شده.
     </div>
   </div>
-</footer>
 
-<div class="mobile-order">
-  <a class="btn btn-primary" href="tel:09146778784">ثبت سفارش و استعلام قیمت ←</a>
+  <!-- باکس کارت فروشگاه و گارانتی -->
+  <div class="store-badge-card">
+    <div class="store-title-bar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
+      <span>تولید و پخش مستقیم JOJO</span>
+    </div>
+    <div class="store-guarantee-bar">
+      <div class="guarantee-left">
+        <svg class="guarantee-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        <span>گارانتی اصالت و سلامت فیزیکی کالا</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- دکمه شناور پشتیبانی هدست -->
+  <div class="support-btn-fixed" title="تماس با پشتیبانی">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+  </div>
 </div>
 
 </body>
