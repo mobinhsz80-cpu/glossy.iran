@@ -10,6 +10,7 @@
   <style>
     :root {
       --primary: #5c2d91;
+      --primary-hover: #482373;
       --primary-light: #f5f0fa;
       --text-main: #2b2b2b;
       --text-muted: #6e6e6e;
@@ -17,8 +18,8 @@
       --bg-page: #f9f9f9;
       --bg-card: #ffffff;
       --price-red: #ef394e;
-      --instagram-color: #E1306C;
       --whatsapp-color: #25D366;
+      --rubika-color: #7d33ff;
     }
 
     * {
@@ -34,7 +35,7 @@
       line-height: 1.8;
       display: flex;
       justify-content: center;
-      padding-bottom: 70px;
+      padding-bottom: 90px; /* فضا برای نوار پایین */
     }
 
     .wrapper {
@@ -43,6 +44,7 @@
       background-color: var(--bg-card);
       min-height: 100vh;
       border-inline: 1px solid #eee;
+      position: relative;
     }
 
     /* نوار جستجوی بالا */
@@ -104,11 +106,11 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
-      scrollbar-width: none; /* مخفی‌سازی اسکرول‌بار در فایرفاکس */
+      scrollbar-width: none;
     }
 
     .slider-track::-webkit-scrollbar {
-      display: none; /* مخفی‌سازی اسکرول‌بار در کروم و سافاری */
+      display: none;
     }
 
     .slide-item {
@@ -128,7 +130,6 @@
       object-fit: contain;
     }
 
-    /* فلش‌های اسلایدر */
     .slider-arrow {
       position: absolute;
       top: 50%;
@@ -150,7 +151,6 @@
     .slider-arrow.prev { right: 10px; }
     .slider-arrow.next { left: 10px; }
 
-    /* نقاط اسلایدر (Dots) */
     .slider-dots {
       display: flex;
       justify-content: center;
@@ -172,7 +172,7 @@
       border-radius: 4px;
     }
 
-    /* دکمه‌های خرید ترب، باسلام و ایمالز زیر عکس */
+    /* مارکت‌پلیس‌ها */
     .market-buttons-container {
       display: flex;
       gap: 8px;
@@ -194,12 +194,6 @@
       color: #333;
       text-decoration: none;
       box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-      transition: all 0.2s ease;
-    }
-
-    .market-btn-inline:hover {
-      background: #f7f7f7;
-      border-color: #bcbcbc;
     }
 
     .market-logo-icon {
@@ -215,25 +209,19 @@
     }
 
     .product-title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
       color: #222;
       margin-bottom: 8px;
+      line-height: 1.5;
     }
 
-    .product-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    /* باکس قیمت (عمده و تکی) */
     .pricing-card {
       background: #fbfbfb;
       border: 1px dashed #d6d6d6;
       border-radius: 12px;
       padding: 14px 16px;
-      margin-bottom: 22px;
+      margin: 16px 0 22px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -283,7 +271,6 @@
       color: #777;
     }
 
-    /* لیست مشخصات فنی */
     .specs-list {
       display: flex;
       flex-direction: column;
@@ -307,7 +294,6 @@
       color: #2b2b2b;
     }
 
-    /* توضیحات متن کالا */
     .content-box {
       font-size: 13px;
       color: #555;
@@ -317,12 +303,11 @@
       margin-top: 10px;
     }
 
-    /* کارت فروشگاه و گارانتی */
+    /* کارت فروشگاه */
     .store-badge-card {
       margin: 20px 18px;
       border: 1px solid var(--border-color);
       border-radius: 12px;
-      overflow: hidden;
       background: #ffffff;
     }
 
@@ -335,26 +320,18 @@
       border-bottom: 1px solid var(--border-color);
       font-weight: 700;
       font-size: 14.5px;
-      color: #2c2c2c;
     }
 
     .store-guarantee-bar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 14px 16px;
       font-size: 13px;
-      color: #3b3b3b;
       font-weight: 600;
-    }
-
-    .guarantee-left {
-      display: flex;
-      align-items: center;
       gap: 8px;
     }
 
-    /* فوتر اختصاصی شامل اینستاگرام و واتساپ */
+    /* فوتر */
     .site-footer {
       border-top: 1px solid var(--border-color);
       padding: 24px 18px;
@@ -370,7 +347,6 @@
       font-weight: 700;
       color: #333;
       text-align: center;
-      margin-bottom: 4px;
     }
 
     .social-links {
@@ -389,71 +365,57 @@
       text-decoration: none;
       font-size: 13px;
       font-weight: 600;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .social-btn:hover {
-      opacity: 0.92;
-      transform: translateY(-2px);
+      color: #fff;
     }
 
     .social-btn.instagram {
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-      color: #ffffff;
+      background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
     }
 
     .social-btn.whatsapp {
       background-color: var(--whatsapp-color);
-      color: #ffffff;
     }
 
     .footer-copy {
       font-size: 11px;
       color: #999;
       text-align: center;
-      margin-top: 8px;
     }
 
-    /* استایل دکمه‌های شناور سمت چپ */
+    /* دکمه‌های شناور سمت چپ */
     .support-btn-fixed {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 50px;
-      height: 50px;
+      bottom: 85px;
+      left: 16px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background: #ff334b;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      box-shadow: 0 4px 14px rgba(255, 51, 75, 0.4);
-      z-index: 99;
-      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 51, 75, 0.4);
+      z-index: 90;
       text-decoration: none;
-      transition: transform 0.2s ease;
     }
 
-    /* دکمه شناور روبیکا بالای دکمه تماس */
     .rubika-btn-fixed {
       position: fixed;
-      bottom: 80px;
-      left: 20px;
-      width: 50px;
-      height: 50px;
+      bottom: 140px;
+      left: 16px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background: #ffffff;
       border: 1px solid #ebebeb;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-      z-index: 99;
-      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 90;
       text-decoration: none;
-      transition: transform 0.2s ease;
-      overflow: hidden;
-      padding: 8px;
+      padding: 6px;
     }
 
     .rubika-btn-fixed img {
@@ -462,9 +424,279 @@
       object-fit: contain;
     }
 
-    .support-btn-fixed:hover,
-    .rubika-btn-fixed:hover {
-      transform: scale(1.08);
+    /* نوار ثابت پایین برای خرید (Bottom Bar) */
+    .bottom-checkout-bar {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background: #ffffff;
+      border-top: 1px solid #e2e2e2;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+    }
+
+    .bar-price-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bar-price-label {
+      font-size: 11px;
+      color: #777;
+    }
+
+    .bar-price-val {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--price-red);
+    }
+
+    .buy-trigger-btn {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .buy-trigger-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    /* مودال سبد خرید و صدور فاکتور */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 1000;
+      backdrop-filter: blur(2px);
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .checkout-modal {
+      background: #fff;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 20px 20px 0 0;
+      padding: 20px 18px;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .modal-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #888;
+    }
+
+    /* کنترل تعداد در مودال */
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8f9fa;
+      padding: 8px 14px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qty-number {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    /* کارت بانکی شکیل */
+    .bank-card {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 14px rgba(42, 82, 152, 0.3);
+    }
+
+    .bank-card-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+
+    .bank-card-number {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-align: center;
+      margin: 8px 0;
+      direction: ltr;
+      font-family: monospace;
+    }
+
+    .bank-card-holder {
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .copy-card-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      cursor: pointer;
+      font-family: inherit;
+      width: 100%;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+
+    .copy-card-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* پیش فاکتور */
+    .invoice-box {
+      background: #fafafa;
+      border: 1px solid #ebebeb;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .invoice-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .invoice-row.total {
+      border-top: 1px dashed #ccc;
+      padding-top: 8px;
+      margin-top: 8px;
+      font-weight: 800;
+      color: var(--price-red);
+      font-size: 15px;
+    }
+
+    /* فرم دریافت مشخصات خریدار */
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #444;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .submit-order-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .action-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .action-btn.whatsapp-send {
+      background: var(--whatsapp-color);
+    }
+
+    .action-btn.rubika-send {
+      background: var(--rubika-color);
     }
   </style>
 </head>
@@ -488,26 +720,13 @@
       <button class="slider-arrow next" onclick="scrollSlider(-1)" aria-label="بعدی">&#10094;</button>
 
       <div class="slider-track" id="sliderTrack">
-        <!-- اسلاید ۱ -->
-        <div class="slide-item">
-          <img src="IMG-20261016-WA0006.jpg" alt="محصول ۱">
-        </div>
-        <!-- اسلاید ۲ -->
-        <div class="slide-item">
-          <img src="IMG-20261015-WA0004.jpg" alt="محصول ۲">
-        </div>
-        <!-- اسلاید ۳ -->
-        <div class="slide-item">
-          <img src="IMG-20261015-WA0005.jpg" alt="محصول ۳">
-        </div>
-        <!-- اسلاید ۴ -->
-        <div class="slide-item">
-          <img src="IMG-20261016-WA0008.jpg" alt="محصول ۴">
-        </div>
+        <div class="slide-item"><img src="IMG-20261016-WA0006.jpg" alt="محصول ۱"></div>
+        <div class="slide-item"><img src="IMG-20261015-WA0004.jpg" alt="محصول ۲"></div>
+        <div class="slide-item"><img src="IMG-20261015-WA0005.jpg" alt="محصول ۳"></div>
+        <div class="slide-item"><img src="IMG-20261016-WA0008.jpg" alt="محصول ۴"></div>
       </div>
     </div>
 
-    <!-- نشانگرهای نقطه‌ای اسلایدر -->
     <div class="slider-dots">
       <span class="dot active"></span>
       <span class="dot"></span>
@@ -537,13 +756,12 @@
   <!-- مشخصات متنی کالا -->
   <div class="product-details">
     <h1 class="product-title">کاغذ فتوگلاسه ۱۳۵ گرم پشت چسبی JOJO</h1>
-    <div class="product-subtitle">کاغذ فتوگلاسه ۱۳۵ گرم پشت چسبی JOJO</div>
 
     <!-- قیمت عمده و تکی -->
     <div class="pricing-card">
       <div class="price-row">
         <span class="price-label">
-          <span class="badge-tag">کارتنی</span>
+          <span class="badge-tag">کارتنی (۳ بسته به بالا)</span>
           خرید عمده:
         </span>
         <span class="price-value">
@@ -552,9 +770,7 @@
         </span>
       </div>
       <div class="price-row">
-        <span class="price-label">
-          خرید تکی:
-        </span>
+        <span class="price-label">خرید تکی:</span>
         <span class="price-value">
           ۲,۵۵۰,۰۰۰
           <span class="price-unit">تومان</span>
@@ -578,63 +794,128 @@
       </div>
     </div>
     
-    <h1 class="product-title"><strong>فتوگلاسه 135گرم پشت چسبدار 50برگی - a4 جوجو JOJO</strong></h1>
+    <h2 class="product-title" style="font-size: 15px;"><strong>فتوگلاسه 135گرم پشت چسبدار 50برگی - a4 جوجو JOJO</strong></h2>
     <div class="content-box">
-      فتوگلاسه 135 گرم پشت چسبدار جوجو (Jo Jo) سایز A4، کاغذی مناسب برای چاپ تصاویر رنگی، برچسب‌های تصویری و طرح‌های گرافیکی با استفاده از پرینترهای جوهرافشان است. این محصول با سطح براق، پشت چسبدار و کیفیت چاپ اعلام‌شده تا 5760dpi، امکان چاپ طرح‌های متنوع و استفاده از آن‌ها روی سطوح مناسب را فراهم می‌کند. هر بسته شامل 50 برگ کاغذ فتوگلاسه پشت چسبدار در ابعاد 210 × 297 میلی‌متر است و در بسته‌بندی مقوایی عرضه می‌شود.
+      فتوگلاسه 135 گرم پشت چسبدار جوجو (Jo Jo) سایز A4، کاغذی مناسب برای چاپ تصاویر رنگی، برچسب‌های تصویری و طرح‌های گرافیکی با استفاده از پرینترهای جوهرافشان است. این محصول با سطح براق، پشت چسبدار و کیفیت چاپ اعلام‌شده تا 5760dpi، امکان چاپ طرح‌های متنوع را فراهم می‌کند.
     </div>
-
   </div>
 
-  <!-- باکس کارت فروشگاه و گارانتی -->
+  <!-- باکس گارانتی -->
   <div class="store-badge-card">
     <div class="store-title-bar">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
       <span>تولید و پخش مستقیم JOJO</span>
     </div>
     <div class="store-guarantee-bar">
-      <div class="guarantee-left">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-        <span>گارانتی اصالت و سلامت فیزیکی کالا</span>
-      </div>
+      <span>گارانتی اصالت و سلامت فیزیکی کالا</span>
     </div>
   </div>
 
-  <!-- فوتر ارتباط با ما: اینستاگرام و واتساپ -->
+  <!-- فوتر -->
   <footer class="site-footer">
     <div class="footer-title">راه‌های ارتباطی و شبکه‌های اجتماعی</div>
     <div class="social-links">
-      <!-- لینک اینستاگرام: نام کاربری خود را جایگزین page_id کنید -->
-      <a href="https://instagram.com/glossy.iran" target="_blank" class="social-btn instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        <span>اینستاگرام</span>
-      </a>
-
-      <!-- لینک واتساپ: شماره موبایل خود را همراه با کد کشور جایگزین کنید -->
-      <a href="https://wa.me/989146778784" target="_blank" class="social-btn whatsapp">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        <span>واتساپ</span>
-      </a>
+      <a href="https://instagram.com/glossy.iran" target="_blank" class="social-btn instagram">اینستاگرام</a>
+      <a href="https://wa.me/989146778784" target="_blank" class="social-btn whatsapp">واتساپ</a>
     </div>
     <div class="footer-copy">کلیه حقوق این محصول متعلق به JOJO است.</div>
   </footer>
 
-   <!-- دکمه شناور روبیکا (بالای دکمه تماس) -->
-<a href="https://rubika.ir/Hajipourrrrr" target="_blank" class="rubika-btn-fixed" title="پیام در روبیکا">
+  <!-- دکمه شناور روبیکا -->
+  <a href="https://rubika.ir/Hajipourrrrr" target="_blank" class="rubika-btn-fixed" title="پیام در روبیکا">
     <img src="rubika.jpg" alt="روبیکا">
   </a>
 
   <!-- دکمه شناور تماس فوری -->
   <a href="tel:09146778784" class="support-btn-fixed" title="تماس فوری">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 
-<div class="contact-box" style="text-align: center; margin: 20px 0; font-size: 18px;">
-  شماره تماس: <a href="tel:09146778784" style="font-weight: bold; text-decoration: none; color: #007bff;"><strong>09146778784</strong></a>
+  <!-- نوار پایین برای خرید مستقیم -->
+  <div class="bottom-checkout-bar">
+    <div class="bar-price-info">
+      <span class="bar-price-label">قیمت تکی:</span>
+      <span class="bar-price-val">۲,۵۵۰,۰۰۰ تومان</span>
+    </div>
+    <button class="buy-trigger-btn" onclick="openCheckoutModal()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+      ثبت سفارش و خرید
+    </button>
+  </div>
 </div>
 
+<!-- پنجره مودال پیش‌فاکتور و تسویه -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="checkout-modal">
+    <div class="modal-header">
+      <div class="modal-title">پیش‌فاکتور و خرید کارت‌به‌کارت</div>
+      <button class="close-btn" onclick="closeCheckoutModal()">&times;</button>
+    </div>
+
+    <!-- تغییر تعداد -->
+    <div class="quantity-control">
+      <span style="font-size: 13px; font-weight: 600;">تعداد بسته درخواستی:</span>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+        <span class="qty-number" id="orderQty">1</span>
+        <button class="qty-btn" onclick="changeQty(-1)">-</button>
+      </div>
+    </div>
+
+    <!-- کارت بانکی -->
+    <div class="bank-card">
+      <div class="bank-card-top">
+        <span>بانک صادرات ایران</span>
+        <span>واریز کارت به کارت</span>
+      </div>
+      <div class="bank-card-number" id="cardNumDisplay">6037 - 9975 - 4751 - 5610</div>
+      <div class="bank-card-holder">به نام: رعنا حاجی پورمیر آبادی</div>
+      <button class="copy-card-btn" onclick="copyCardNumber()">📋 کپی شماره کارت</button>
+    </div>
+
+    <!-- صورتحساب / پیش‌فاکتور -->
+    <div class="invoice-box">
+      <div class="invoice-row">
+        <span>کالای انتخابی:</span>
+        <span>کاغذ فتوگلاسه JOJO</span>
+      </div>
+      <div class="invoice-row">
+        <span>نرخ محاسبه:</span>
+        <span id="rateType">قیمت تکی</span>
+      </div>
+      <div class="invoice-row total">
+        <span>مبلغ قابل پرداخت:</span>
+        <span id="totalPriceDisplay">۲,۵۵۰,۰۰۰ تومان</span>
+      </div>
+    </div>
+
+    <!-- فرم اطلاعات ارسال -->
+    <div class="form-group">
+      <label>نام و نام خانوادگی:</label>
+      <input type="text" id="custName" placeholder="مثال: علی محمدی">
+    </div>
+    <div class="form-group">
+      <label>شماره موبایل جهت هماهنگی:</label>
+      <input type="tel" id="custPhone" placeholder="۰۹۱۲۰۰۰۰۰۰۰">
+    </div>
+    <div class="form-group">
+      <label>آدرس دقیق پستی و کد پستی:</label>
+      <textarea id="custAddress" rows="2" placeholder="شهر، خیابان، پلاک، کد پستی..."></textarea>
+    </div>
+
+    <!-- دکمه‌های تایید و ارسال فیش -->
+    <div class="submit-order-actions">
+      <button class="action-btn whatsapp-send" onclick="sendInvoiceToWhatsApp()">
+        تایید و ارسال فاکتور به واتساپ
+      </button>
+      <button class="action-btn rubika-send" onclick="sendInvoiceToRubika()">
+        تایید و ارسال فاکتور به روبیکا
+      </button>
+    </div>
+  </div>
 </div>
 
 <script>
+  // کنترل اسلایدر
   const track = document.getElementById('sliderTrack');
   const dots = document.querySelectorAll('.dot');
 
@@ -643,13 +924,77 @@
     track.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
   }
 
-  // بروزرسانی نقاط فعال هنگام اسکرول یا ورق زدن
   track.addEventListener('scroll', () => {
     const index = Math.round(Math.abs(track.scrollLeft) / track.clientWidth);
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === index);
     });
   });
+
+  // منطق سبد خرید و محاسبه فاکتور
+  let quantity = 1;
+  const singlePrice = 2550000;
+  const wholesalePrice = 2450000;
+
+  function updateInvoice() {
+    document.getElementById('orderQty').innerText = quantity;
+    // ۳ بسته یا بیشتر، نرخ عمده محاسبه می‌شود
+    const currentPrice = quantity >= 3 ? wholesalePrice : singlePrice;
+    const total = quantity * currentPrice;
+
+    document.getElementById('rateType').innerText = quantity >= 3 ? "نرخ عمده (کارتنی)" : "نرخ تکی";
+    document.getElementById('totalPriceDisplay').innerText = total.toLocaleString('fa-IR') + ' تومان';
+  }
+
+  function changeQty(amt) {
+    if (quantity + amt >= 1) {
+      quantity += amt;
+      updateInvoice();
+    }
+  }
+
+  function openCheckoutModal() {
+    document.getElementById('checkoutModal').classList.add('active');
+  }
+
+  function closeCheckoutModal() {
+    document.getElementById('checkoutModal').classList.remove('active');
+  }
+
+  // کپی شماره کارت در کلیپ‌بورد
+  function copyCardNumber() {
+    navigator.clipboard.writeText("6037997547515610");
+    alert("شماره کارت کپی شد: ۶۰۳۷۹۹۷۵۴۷۵۱۵۶۱۰");
+  }
+
+  // ساخت متن فاکتور
+  function generateOrderText() {
+    const name = document.getElementById('custName').value.trim() || 'ثبت نشده';
+    const phone = document.getElementById('custPhone').value.trim() || 'ثبت نشده';
+    const address = document.getElementById('custAddress').value.trim() || 'ثبت نشده';
+    const currentPrice = quantity >= 3 ? wholesalePrice : singlePrice;
+    const total = (quantity * currentPrice).toLocaleString('fa-IR');
+
+    return `سلام، درخواست سفارش فتوگلاسه JOJO دارم:%0A` +
+           `📦 تعداد: ${quantity} بسته%0A` +
+           `💰 مبلغ واریزی: ${total} تومان%0A` +
+           `👤 خریدار: ${name}%0A` +
+           `📞 تماس: ${phone}%0A` +
+           `📍 آدرس: ${address}%0A%0A` +
+           `فیش واریزی پیوست شد.`;
+  }
+
+  function sendInvoiceToWhatsApp() {
+    const text = generateOrderText();
+    window.open(`https://wa.me/989146778784?text=${text}`, '_blank');
+  }
+
+  function sendInvoiceToRubika() {
+    // کپی کردن متن برای ارسال آسان در روبیکا
+    navigator.clipboard.writeText(decodeURIComponent(generateOrderText().replace(/%0A/g, '\n')));
+    alert("اطلاعات فاکتور کپی شد! در روبیکا وارد چت شده و آن را ارسال نمایید.");
+    window.open("https://rubika.ir/Hajipourrrrr", '_blank');
+  }
 </script>
 
 </body>
