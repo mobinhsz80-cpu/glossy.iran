@@ -35,7 +35,7 @@
       line-height: 1.8;
       display: flex;
       justify-content: center;
-      padding-bottom: 90px; /* فضا برای نوار پایین */
+      padding-bottom: 90px;
     }
 
     .wrapper {
@@ -47,14 +47,38 @@
       position: relative;
     }
 
-    /* نوار جستجوی بالا */
-    .top-search-bar {
-      padding: 12px 16px;
+    /* هدر بالای سایت (لوگو و عنوان فتوگلاسه ایران) */
+    .site-header {
       background: #ffffff;
       border-bottom: 1px solid var(--border-color);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       position: sticky;
       top: 0;
       z-index: 100;
+    }
+
+    .site-logo {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .site-brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* نوار جستجوی بالا */
+    .top-search-bar {
+      padding: 10px 16px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .search-input-box {
@@ -424,7 +448,7 @@
       object-fit: contain;
     }
 
-    /* نوار ثابت پایین برای خرید (Bottom Bar) */
+    /* نوار ثابت پایین برای خرید */
     .bottom-checkout-bar {
       position: fixed;
       bottom: 0;
@@ -533,7 +557,6 @@
       color: #888;
     }
 
-    /* کنترل تعداد در مودال */
     .quantity-control {
       display: flex;
       align-items: center;
@@ -563,7 +586,6 @@
       font-weight: 700;
     }
 
-    /* کارت بانکی شکیل */
     .bank-card {
       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
       color: #fff;
@@ -615,7 +637,6 @@
       background: rgba(255, 255, 255, 0.35);
     }
 
-    /* پیش فاکتور */
     .invoice-box {
       background: #fafafa;
       border: 1px solid #ebebeb;
@@ -640,7 +661,6 @@
       font-size: 15px;
     }
 
-    /* فرم دریافت مشخصات خریدار */
     .form-group {
       margin-bottom: 12px;
     }
@@ -703,6 +723,13 @@
 <body>
 
 <div class="wrapper">
+  
+  <!-- هدر بالای سایت با عنوان فتوگلاسه ایران و لوگو -->
+  <header class="site-header">
+    <img src="IMG-20261017-WA0001.webp" alt="لوگو فتوگلاسه ایران" class="site-logo">
+    <div class="site-brand-title">فتوگلاسه ایران</div>
+  </header>
+
   <!-- نوار جستجو -->
   <div class="top-search-bar">
     <div class="search-input-box">
@@ -747,7 +774,7 @@
       <span>خرید از باسلام</span>
     </a>
 
-    <a href="https://emalls.ir/%D9%85%D8%B4%D8%AE%D8%B5%D8%A7%D8%AA_%DA%A9%D8%A7%D8%BA%D8%B0-%D9%81%D8%AA%D9%88%DA%AF%D9%84%D8%A7%D8%B3%D9%87-%D8%AC%D9%88%D8%AC%D9%88-%D9%85%D8%AF%D9%84-240g-m-%D8%B3%D8%A7%DB%8C%D8%B2-A4-%D8%A8%D8%B3%D8%AA%D9%87-20-%D8%B9%D8%AF%D8%AF%DB%8C~id~8054958" target="_blank" class="market-btn-inline">
+    <a href="https://emalls.ir/%D9%85%D8%B4%D8%AE%D8%B5%D8%A7%D8%AA_%DA%A9%D8%A7%D8%BA%D8%B0-%D9%81%D8%AA%D9%88%DA%AF%D9%84%D8%A7%D8%B3%D9%87-%D8%AC%D9%88%D8%AC%D9%88-%D9%85%D8%AF%D9%84-240g-m-%D8%B3%D8%A7%DB%8C%D8%B2-A4-%D8%A8%D8%B3%D8%AA%D9%87-20-%D8%B9%D8%AF%D8%AF%DB%89~id~8054958" target="_blank" class="market-btn-inline">
       <img src="imalz.png" alt="ایمالز" class="market-logo-icon">
       <span>خرید از ایمالز</span>
     </a>
@@ -915,7 +942,6 @@
 </div>
 
 <script>
-  // کنترل اسلایدر
   const track = document.getElementById('sliderTrack');
   const dots = document.querySelectorAll('.dot');
 
@@ -931,14 +957,12 @@
     });
   });
 
-  // منطق سبد خرید و محاسبه فاکتور
   let quantity = 1;
   const singlePrice = 2550000;
   const wholesalePrice = 2450000;
 
   function updateInvoice() {
     document.getElementById('orderQty').innerText = quantity;
-    // ۳ بسته یا بیشتر، نرخ عمده محاسبه می‌شود
     const currentPrice = quantity >= 3 ? wholesalePrice : singlePrice;
     const total = quantity * currentPrice;
 
@@ -961,13 +985,11 @@
     document.getElementById('checkoutModal').classList.remove('active');
   }
 
-  // کپی شماره کارت در کلیپ‌بورد
   function copyCardNumber() {
     navigator.clipboard.writeText("6037997547515610");
     alert("شماره کارت کپی شد: ۶۰۳۷۹۹۷۵۴۷۵۱۵۶۱۰");
   }
 
-  // ساخت متن فاکتور
   function generateOrderText() {
     const name = document.getElementById('custName').value.trim() || 'ثبت نشده';
     const phone = document.getElementById('custPhone').value.trim() || 'ثبت نشده';
@@ -990,7 +1012,6 @@
   }
 
   function sendInvoiceToRubika() {
-    // کپی کردن متن برای ارسال آسان در روبیکا
     navigator.clipboard.writeText(decodeURIComponent(generateOrderText().replace(/%0A/g, '\n')));
     alert("اطلاعات فاکتور کپی شد! در روبیکا وارد چت شده و آن را ارسال نمایید.");
     window.open("https://rubika.ir/Hajipourrrrr", '_blank');
