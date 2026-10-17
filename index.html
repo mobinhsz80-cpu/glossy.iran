@@ -788,7 +788,7 @@
     <div class="pricing-card">
       <div class="price-row">
         <span class="price-label">
-          <span class="badge-tag">کارتنی (۳ بسته به بالا)</span>
+          <span class="badge-tag">کارتنی (10 بسته به بالا)</span>
           خرید عمده:
         </span>
         <span class="price-value">
@@ -963,10 +963,10 @@
 
   function updateInvoice() {
     document.getElementById('orderQty').innerText = quantity;
-    const currentPrice = quantity >= 3 ? wholesalePrice : singlePrice;
+    const currentPrice = quantity >= 10 ? wholesalePrice : singlePrice;
     const total = quantity * currentPrice;
 
-    document.getElementById('rateType').innerText = quantity >= 3 ? "نرخ عمده (کارتنی)" : "نرخ تکی";
+    document.getElementById('rateType').innerText = quantity >= 10 ? "نرخ عمده (کارتنی)" : "نرخ تکی";
     document.getElementById('totalPriceDisplay').innerText = total.toLocaleString('fa-IR') + ' تومان';
   }
 
@@ -994,7 +994,7 @@
     const name = document.getElementById('custName').value.trim() || 'ثبت نشده';
     const phone = document.getElementById('custPhone').value.trim() || 'ثبت نشده';
     const address = document.getElementById('custAddress').value.trim() || 'ثبت نشده';
-    const currentPrice = quantity >= 3 ? wholesalePrice : singlePrice;
+    const currentPrice = quantity >= 10 ? wholesalePrice : singlePrice;
     const total = (quantity * currentPrice).toLocaleString('fa-IR');
 
     return `سلام، درخواست سفارش فتوگلاسه JOJO دارم:%0A` +
